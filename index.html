@@ -1,0 +1,20 @@
+<html>
+  <style>
+	@font-face {
+		font-family: 'OpenSans';
+		src: url('fonts/OpenSans-Regular-webfont.woff') format('woff');
+	}
+  </style>
+  <body id="body">
+	<p style="font-family:sans-serif">You should see a "IT WORKS OK" message below:</p>
+	<p style="font-family:OpenSans">IT WORKS OK</p>
+	<p> Now click this button: </p>
+	<button onclick="reproduce()">Reproduce bug</button>
+	<p>It will open this link in new tabs 40 times. <strong>If only one new tab gets opened, it's because the browser is blocking pop-ups</strong>. Enable popups and click the above button again.</p>
+	<p><strong>Expected result</strong>: each of the 40 tabs contain a visible "IT WORKS OK" text</p>
+	<p><strong>Actual result</strong>: some of the tabs do not contain the text - see for yourself. A window resize and/or refresh will make it reappear. </p>
+  </body>
+  <script>
+	function reproduce() {for(var i=1; i<=40; i++) window.open(window.location);}
+  </script>
+</html>
